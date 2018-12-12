@@ -1,0 +1,31 @@
+﻿<Window x:Class="heurtin.WpfAnimation.Animation.BlinkSquare.BlinkSquare"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:heurtin.WpfAnimation.Animation.BlinkSquare"
+        mc:Ignorable="d"
+        Title="BlinkSquare" Height="450" Width="800">
+    <Grid>
+        <Rectangle
+                Name="MyRectangle"
+                Width="100" 
+                Height="100"
+                Fill="Blue">
+            <Rectangle.Triggers>
+                <!-- Animates the rectangle's opacity. -->
+                <EventTrigger RoutedEvent="Rectangle.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                    Storyboard.TargetName="MyRectangle" 
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="1.0" To="0.0" Duration="0:0:0:1" 
+                                    AutoReverse="True" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>
+        </Rectangle>
+    </Grid>
+</Window>

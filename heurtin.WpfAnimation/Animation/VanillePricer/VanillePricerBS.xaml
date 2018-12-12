@@ -1,0 +1,58 @@
+﻿<Window x:Class="heurtin.WpfAnimation.Animation.VanillePricer.VanillePricerBS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Vanille Pricer BS" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0" Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Label Content="Strike :" VerticalAlignment="Center"/>
+                <TextBox Name="strikeBox" Width="100" Height="23" HorizontalAlignment="Center" Text="{Binding Param.Strike}"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Label Content="Stock Price :" VerticalAlignment="Center"/>
+                <TextBox Name="stockBox" Width="100" Height="23" HorizontalAlignment="Center" Text="{Binding Param.Stock}"/>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Label Content="Time (days):" VerticalAlignment="Center"/>
+                <TextBox Name="timeBox" Width="100" Height="23" HorizontalAlignment="Center" Text="{Binding Param.Day}"/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Label Content="Volatility :" VerticalAlignment="Center"/>
+                <TextBox Name="volBox" Width="100" Height="23" HorizontalAlignment="Center" Text="{Binding Param.Vol}"/>
+            </Grid>
+
+            <Grid Grid.Row="4">
+                <Label Content="Interest Rate :" VerticalAlignment="Center"/>
+                <TextBox Name="rateBox" Width="100" Height="23" HorizontalAlignment="Center" Text="{Binding Param.InterestRate}"/>
+            </Grid>
+
+
+            <Grid Grid.Row="5">
+                <Button Content="Run Calcul" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding RunPricing}"/>
+            </Grid>
+
+
+        </Grid>
+
+    </Grid>
+</Window>
