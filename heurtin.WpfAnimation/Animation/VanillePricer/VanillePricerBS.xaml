@@ -46,7 +46,6 @@
                 <TextBox Name="rateBox" Width="100" Height="23" HorizontalAlignment="Center" Text="{Binding Param.InterestRate}"/>
             </Grid>
 
-
             <Grid Grid.Row="5">
                 <Button Content="Run Calcul" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding RunPricing}"/>
             </Grid>

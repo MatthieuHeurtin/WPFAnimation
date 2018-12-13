@@ -19,3 +19,14 @@ C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurti
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\BlinkSquare\BlinkSquare.baml
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\VanillePricer\VanillePricerBS.baml
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\VanillePricer\VanillePricerBS.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\nunit.framework.dll
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\nunit.framework.pdb
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\nunit.framework.xml
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\heurtin.WpfAnimation.csproj.CopyComplete
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\nunit.engine.dll
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\nunit.engine.api.dll
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\heurtin.WpfAnimation_Content.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\Ninject.dll
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\Ninject.xml
