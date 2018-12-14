@@ -69,6 +69,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Animation\CurveDawer\CurveDrawer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Animation\FirstAnimationTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,10 @@
     </Page>
     <Compile Include="Animation\BlinkSquare\BlinkSquare.xaml.cs">
       <DependentUpon>BlinkSquare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\CurveDawer\Converter\DoubleArrayToPointsConverter.cs" />
+    <Compile Include="Animation\CurveDawer\CurveDrawer.xaml.cs">
+      <DependentUpon>CurveDrawer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Animation\VanillePricer\Calculator\ICancellableTask.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\IPricer.cs" />

@@ -13,7 +13,7 @@ namespace heurtin.WpfAnimation.Animation.VanillePricer
     /// <summary>
     /// Interaction logic for VanillePricerBS.xaml
     /// </summary>
-    public partial class VanillePricerBS : Window, IAnimation
+    public partial class VanillePricerBS : Window//, IAnimation
     {
 
         #region command

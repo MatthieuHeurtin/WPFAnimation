@@ -30,3 +30,6 @@ C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurti
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\heurtin.WpfAnimation_Content.g.cs
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\Ninject.dll
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\bin\Debug\Ninject.xml
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\CurveDawer\CurveDrawer.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\CurveDawer\CurveDrawer.baml
