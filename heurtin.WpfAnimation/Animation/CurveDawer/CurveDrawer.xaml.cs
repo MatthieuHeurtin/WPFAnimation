@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -13,11 +14,15 @@ namespace heurtin.WpfAnimation.Animation.CruveDrawer
 
         public static string GetComment()
         {
-            return "A Simple program to draw curves";
+            return "A try of drawing a Cos using Polyline. To complicated, it must exist WPF libraries to draw math curves";
         }
 
-        public double[] Output { get; set; }
+        public ObservableCollection<double> Output { get; set; }
 
+
+
+
+        public static int Scale = 2;
 
         public CurveDrawer()
         {
@@ -25,50 +30,42 @@ namespace heurtin.WpfAnimation.Animation.CruveDrawer
 
             DataContext = this;
 
-            int size = 100;
-            Output = new double[size];
-            for (int i =0; i< size; i++)
-            {
-                Output[i] = 2 * i;
-            }
+            DrawAxis();
         }
 
-
-        // Draw a simple graph.
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void DrawAxis()
         {
-
-            DrawY();
+            myCan.Children.Clear();
             DrawX();
-
+            DrawY();
+            myCan.Children.Add(myLine);
+            int size = 100;
+            Output = new ObservableCollection<double>();
+            for (int i = 0; i < size; i++)
+            {
+                Output.Add( Math.Cos(i));
+            }
+            
         }
 
         private void DrawY()
         {
             const double margin = 2;
             double xmin = margin;
-            double xmax = myCan.Width - margin;
             double ymin = margin;
-            double ymax = myCan.Height - margin;
-            const double step = 10;
-
-
-            var YLine = new LineGeometry(new Point(xmin, ymin), new Point(xmin, ymax));
+            int _scale = Scale;
+            
 
             GeometryGroup YAxisGeo = new GeometryGroup();
-            YAxisGeo.Children.Add(YLine);
-
-
-            for (double x = xmin + step;
-                x <= myCan.Width - step; x += step)
+            for (double y = ymin+ _scale; y <= myCan.Height - _scale; y += _scale)
             {
                 YAxisGeo.Children.Add(new LineGeometry(
-                    new Point(x, ymax - margin / 2),
-                    new Point(x, ymax + margin / 2)));
+                    new Point( xmin - margin / 2, y),
+                    new Point( xmin + margin / 2, y)));
             }
 
             Path YAxis = new Path();
-            YAxis.StrokeThickness = 1;
+            YAxis.StrokeThickness = 0.5;
             YAxis.Stroke = Brushes.Black;
             YAxis.Data = YAxisGeo;
 
@@ -79,32 +76,45 @@ namespace heurtin.WpfAnimation.Animation.CruveDrawer
         private void DrawX()
         {
             const double margin = 2;
-            double xmin = margin;
             double xmax = myCan.Width - margin;
-            double ymin = margin;
             double ymax = myCan.Height - margin;
-            const double step = 10;
+            int _scale = Scale;
 
+            GeometryGroup XAxisGeo = new GeometryGroup();
 
-            var YLine = new LineGeometry(new Point(xmin, ymin), new Point(xmax, ymin));
-
-            GeometryGroup YAxisGeo = new GeometryGroup();
-            YAxisGeo.Children.Add(YLine);
-
-
-            for (double y = step; y <= myCan.Height - step; y += step)
+            for (double x = _scale; x <= myCan.Width- _scale; x += _scale)
             {
-                YAxisGeo.Children.Add(new LineGeometry(
-                    new Point(xmin - margin / 2, y),
-                    new Point(xmin + margin / 2, y)));
+                XAxisGeo.Children.Add(new LineGeometry(
+                    new Point(x , ymax/2 - margin / 2),
+                    new Point(x , ymax/2 + margin / 2)));
             }
 
-            Path YAxis = new Path();
-            YAxis.StrokeThickness = 1;
-            YAxis.Stroke = Brushes.Black;
-            YAxis.Data = YAxisGeo;
+            Path XAxis = new Path();
+            XAxis.StrokeThickness = 0.5;
+            XAxis.Stroke = Brushes.Black;
+            XAxis.Data = XAxisGeo;
 
-            myCan.Children.Add(YAxis);
+            myCan.Children.Add(XAxis);
+        }
+
+        private void Button_ClickDecrease(object sender, RoutedEventArgs e)
+        {
+            if (Scale > 2)
+            {
+                Scale--;
+                DrawAxis();
+            }
+        }
+
+
+        private void Button_ClickIncrease(object sender, RoutedEventArgs e)
+        {
+
+            if (Scale < 15)
+            {
+                Scale++;
+                DrawAxis();
+            }
         }
     }
 }

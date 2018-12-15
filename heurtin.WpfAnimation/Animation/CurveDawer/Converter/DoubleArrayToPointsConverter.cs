@@ -1,4 +1,6 @@
-﻿using System;
+﻿using heurtin.WpfAnimation.Animation.CruveDrawer;
+using System;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
@@ -10,30 +12,18 @@ namespace heurtin.WpfAnimation.Animation.CurveDawer.Converter
     public class DoubleArrayToPointsConverter : IValueConverter
     {
 
-        private double _scale = 1;
-
-        public double Scale
-        {
-            get { return _scale; }
-            set { _scale = value; }
-        }
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            double[] values = value as double[];
-            if (values == null)
+            ObservableCollection<double> values = value as ObservableCollection<double>;
+            
+            PointCollection points = new PointCollection(values.Count);
+            for (int i = 0; i < values.Count; i++)
             {
-                throw new ArgumentException("value", "Must be double[]");
+                double x = (i * CurveDrawer.Scale)  + CurveDrawer.Scale ;
+                double y = (values[i] * CurveDrawer.Scale) + CurveDrawer.Scale;
+                points.Add(new Point(x,-y));
             }
-
-            PointCollection points = new PointCollection(values.Length);
-            for (int i = 0; i < values.Length; ++i)
-            {
-                double x = i * 100 / values.Length;
-                double y = values[i] * Scale ;
-                points.Add(new Point(x, y));
-            }
-
             return points;
         }
 

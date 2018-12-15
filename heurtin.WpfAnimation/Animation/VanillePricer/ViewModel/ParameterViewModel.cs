@@ -60,8 +60,6 @@ namespace heurtin.WpfAnimation.Animation.VanillePricer.ViewModel
             }
         }
 
-
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
