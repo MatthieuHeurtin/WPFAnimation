@@ -1,24 +1,14 @@
 ﻿using heurtin.WpfAnimation.Animation.VanillePricer.Calculator.Model;
 using System;
-using System.Threading;
 
 namespace heurtin.WpfAnimation.Animation.VanillePricer.Calculator
 {
     public class Pricer : IPricer
     {
-        public CancellationTokenSource CancellationToken { get;  }
-
         public event EventHandler PricingTerminated;
-
-        public Pricer()
-        {
-            CancellationToken = new CancellationTokenSource();
-        }
-
+               
         double IPricer.Price(BSParameter param)
         {
-            Thread.Sleep(5000);
-
             double d1 = 0.0;
             double d2 = 0.0;
             double optionValue = 0.0;
@@ -41,16 +31,7 @@ namespace heurtin.WpfAnimation.Animation.VanillePricer.Calculator
             {
                 optionValue = X * Math.Exp(-r * T) * CumulativeNormalDistributionFun(-d2) - S * CumulativeNormalDistributionFun(-d1);
             }
-            
-            Console.WriteLine("Matt");
-            
-            if (!CancellationToken.IsCancellationRequested) //raise event result only if the task has not been cancelled
-            {
-                PricingTerminated?.Invoke(this, null);
-            }
-
-            
-
+            PricingTerminated?.Invoke(this, null);
             return optionValue;
         }
 

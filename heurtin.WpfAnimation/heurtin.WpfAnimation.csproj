@@ -92,7 +92,6 @@
     <Compile Include="Animation\CurveDawer\CurveDrawer.xaml.cs">
       <DependentUpon>CurveDrawer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Animation\VanillePricer\Calculator\ICancellableTask.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\IPricer.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\Model\BSParameter.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\Pricer.cs" />
@@ -100,7 +99,6 @@
       <DependentUpon>FirstAnimationTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Animation\VanillePricer\Calculator\PricerTest.cs" />
-    <Compile Include="Animation\VanillePricer\Command\CommandWrapper.cs" />
     <Compile Include="Animation\VanillePricer\Command\RunPricingCommand.cs" />
     <Compile Include="Animation\VanillePricer\Injector\InjectionMapping.cs" />
     <Compile Include="Animation\VanillePricer\VanillePricerBS.xaml.cs">

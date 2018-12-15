@@ -1,23 +1,15 @@
 ﻿using heurtin.WpfAnimation.Animation.VanillePricer.Calculator.Model;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace heurtin.WpfAnimation.Animation.VanillePricer.Calculator
 {
     //Test classes should be in another project to no end in production
-
-
     [TestFixture]
     public class PricerTest
     {
         [TestCase]
         public void TestPrice()
         {
-            var model = new Pricer();
+            IPricer model = new Pricer();
             var bsParam = new BSParameter()
             {
                 Strike = 65,
@@ -28,8 +20,8 @@ namespace heurtin.WpfAnimation.Animation.VanillePricer.Calculator
                 OptionType = OptionTypeEnum.CallOption
             };
 
-           // double price = model.Price(bsParam);
-          //  Assert.AreEqual(2.1333718619310424d, price);
+            double price = model.Price(bsParam);
+            Assert.AreEqual(2.1333718619310424d, price);
         }
     }
 }
