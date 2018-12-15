@@ -77,6 +77,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Animation\Triggers\TriggerTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Animation\VanillePricer\VanillePricerBS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +96,10 @@
     <Compile Include="Animation\CurveDawer\CurveDrawer.xaml.cs">
       <DependentUpon>CurveDrawer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Animation\Triggers\TriggerTesting.xaml.cs">
+      <DependentUpon>TriggerTesting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\Triggers\ViewModel\Element.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\IPricer.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\Model\BSParameter.cs" />
     <Compile Include="Animation\VanillePricer\Calculator\Pricer.cs" />

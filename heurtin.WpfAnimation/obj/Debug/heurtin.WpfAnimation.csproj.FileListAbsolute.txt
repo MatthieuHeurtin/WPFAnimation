@@ -33,3 +33,5 @@ C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurti
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\CurveDawer\CurveDrawer.g.cs
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\CurveDawer\CurveDrawer.baml
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Triggers\TriggerTesting.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Triggers\TriggerTesting.baml
