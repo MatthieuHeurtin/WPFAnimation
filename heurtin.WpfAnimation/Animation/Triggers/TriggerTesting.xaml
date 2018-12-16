@@ -8,44 +8,86 @@
         Title="TriggerTesting" Height="450" Width="800">
 
     <Window.Resources>
-        
-        <DataTemplate x:Key="T">
-            <Button Width="50" Height="20" Content="{Binding DataContext.Elements.Name}"></Button>
-        </DataTemplate>
 
-        <DataTemplate x:Key="heurtin.Button">
-            <Button  Width="140" Content="Run" Command="{Binding ElementName=MYList  ,Path=DataContext.MyCommand}" CommandParameter="{Binding AnimationName}" />
-        </DataTemplate>
+
 
         <Style TargetType = "Button">
             <Setter Property = "Foreground" Value = "Blue" />
-            <Setter Property = "Width" Value = "9" />
-
+            <Setter Property = "Width" Value = "50" />
+            <Setter Property = "Height" Value = "30" />
             <Style.Triggers>
                 <Trigger Property = "IsMouseOver" Value = "True">
                     <Setter Property = "Foreground" Value = "Red" />
-                    <Setter Property = "Width" Value = "15" />
+                    <Setter Property = "Width" Value = "100" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType = "TextBox">
+            <Setter Property = "BorderThickness" Value = "1" />
+            <Setter Property = "BorderBrush" Value = "White" />
+            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Style.Triggers>
+                <Trigger Property = "IsFocused" Value = "True">
+                    <Setter Property = "BorderThickness" Value = "2" />
+                    <Setter Property="Background" Value="NavajoWhite"/>
+                    <Setter Property="FontSize" Value="15"/>
+                </Trigger>
+                <Trigger Property = "IsMouseOver" Value = "True">
+                    <Setter Property="FontSize" Value="15"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
 
 
 
+        <Style TargetType = "TextBlock">
+            <Setter Property="Background" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Width" Value="50"/>
+            <Style.Triggers>
+                <Trigger Property = "IsFocused" Value = "True">
+                    <Setter Property="Background" Value="NavajoWhite"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="Width" Value="150"/>
+                </Trigger>
+                <Trigger Property = "IsMouseOver" Value = "True">
+                    <Setter Property="FontSize" Value="15"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
     </Window.Resources>
 
     <Grid>
-        <ListView VerticalAlignment="Stretch" Name="LIST" ItemsSource="{Binding Elements}">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn  Header="Name"  CellTemplate="{StaticResource heurtin.Button}"/>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="YYYY" >
-            </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
 
+        <Button Grid.Column="0" Content="I'm a button"/>
+        <TextBox Grid.Column="1" Text="I'm a TextBox" />
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="0" Margin="10" ItemsSource="{Binding Elements}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name"   DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Integer"  DisplayMemberBinding="{Binding Integer}" />
+                        <GridViewColumn Header="Boolean"  DisplayMemberBinding="{Binding Boolean}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBox Grid.Row="1" Height="100" Text="Name;Integer;Boolean" VerticalAlignment="Top" Name="AddTextBox"/>
+            <Button Grid.Row="1" Content="Add" Command="{Binding AddCommand}" CommandParameter="{Binding Text, ElementName=AddTextBox}" VerticalAlignment="Bottom"/>
+
+        </Grid>
     </Grid>
-    
 </Window>

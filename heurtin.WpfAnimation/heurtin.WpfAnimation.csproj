@@ -96,6 +96,7 @@
     <Compile Include="Animation\CurveDawer\CurveDrawer.xaml.cs">
       <DependentUpon>CurveDrawer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Animation\Triggers\AddCommandRelay.cs" />
     <Compile Include="Animation\Triggers\TriggerTesting.xaml.cs">
       <DependentUpon>TriggerTesting.xaml</DependentUpon>
     </Compile>
