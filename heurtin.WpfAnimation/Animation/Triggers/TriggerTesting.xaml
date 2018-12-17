@@ -9,8 +9,6 @@
 
     <Window.Resources>
 
-
-
         <Style TargetType = "Button">
             <Setter Property = "Foreground" Value = "Blue" />
             <Setter Property = "Width" Value = "50" />
@@ -40,9 +38,17 @@
             </Style.Triggers>
         </Style>
 
+        <DataTemplate x:Key="BasicLabels">
+            <Label Name="MyLabel" Content="{Binding Name}"/>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}},Path=IsMouseOver}" Value="True">
+                    <Setter TargetName="MyLabel" Property="Foreground" Value="Red"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
 
 
-        <Style TargetType = "TextBlock">
+        <!--<Style TargetType = "TextBlock">
             <Setter Property="Background" Value="WhiteSmoke"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Width" Value="50"/>
@@ -56,8 +62,10 @@
                     <Setter Property="FontSize" Value="15"/>
                 </Trigger>
             </Style.Triggers>
-        </Style>
+        </Style>-->
 
+
+        <SolidColorBrush x:Key="brush" Color="Yellow"></SolidColorBrush>
 
     </Window.Resources>
 
@@ -65,6 +73,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
@@ -79,14 +88,48 @@
             <ListView Grid.Row="0" Margin="10" ItemsSource="{Binding Elements}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Name"   DisplayMemberBinding="{Binding Name}"/>
-                        <GridViewColumn Header="Integer"  DisplayMemberBinding="{Binding Integer}" />
-                        <GridViewColumn Header="Boolean"  DisplayMemberBinding="{Binding Boolean}" />
+                        <GridViewColumn Header="Name"   CellTemplate="{StaticResource BasicLabels}" />
+                        <GridViewColumn Header="Integer"   DisplayMemberBinding="{Binding Integer}" />
+                        <GridViewColumn Header="Boolean"   DisplayMemberBinding="{Binding Boolean}" />
                     </GridView>
                 </ListView.View>
             </ListView>
             <TextBox Grid.Row="1" Height="100" Text="Name;Integer;Boolean" VerticalAlignment="Top" Name="AddTextBox"/>
-            <Button Grid.Row="1" Content="Add" Command="{Binding AddCommand}" CommandParameter="{Binding Text, ElementName=AddTextBox}" VerticalAlignment="Bottom"/>
+            <Button Name="AddButton" Grid.Row="1" Content="Add" Command="{Binding AddCommand}" CommandParameter="{Binding Text, ElementName=AddTextBox}" VerticalAlignment="Bottom"/>
+            <TextBlock  Text="Adding Element">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Hidden" />
+                        <Setter Property="Opacity" Value="0" />
+                        <Style.Triggers>
+                            <!--<Trigger Property="AddButton.IsPressed" Value="true">
+                                
+                                <Setter Property="Visibility" Value="Visible" />
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>-->
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+
+
+        </Grid>
+        <Grid Grid.Column="3">
+            <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="Waiting an element to be added" />
+                        <Setter Property="Foreground" Value="Red" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsAdded}" Value="True">
+                                <Setter Property="Text" Value="Element being added..." />
+                                <Setter Property="Foreground" Value="Green" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
         </Grid>
     </Grid>
