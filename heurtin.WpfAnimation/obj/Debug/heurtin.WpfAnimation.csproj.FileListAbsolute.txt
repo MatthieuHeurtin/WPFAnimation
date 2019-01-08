@@ -35,3 +35,9 @@ C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurti
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\CurveDawer\CurveDrawer.baml
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Triggers\TriggerTesting.g.cs
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Triggers\TriggerTesting.baml
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Game\Game.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Game\Game.baml
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Game\GraphicElement\ForestCase.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Game\GraphicElement\ForestCase.baml
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Game\GraphicElement\DesertCase.g.cs
+C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\obj\Debug\Animation\Game\GraphicElement\DesertCase.baml

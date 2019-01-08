@@ -60,7 +60,7 @@ namespace heurtin.WpfAnimation.Animation.Triggers
                            });
                     }));
                 }
-                catch (FormatException ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("ERROR ");
                 }

@@ -77,6 +77,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Animation\Game\Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animation\Game\GraphicElement\DesertCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Animation\Game\GraphicElement\ForestCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
     <Page Include="Animation\Triggers\TriggerTesting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +108,20 @@
     <Compile Include="Animation\CurveDawer\CurveDrawer.xaml.cs">
       <DependentUpon>CurveDrawer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Animation\Game\Game.xaml.cs">
+      <DependentUpon>Game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\Game\GraphicElement\DesertCase.xaml.cs">
+      <DependentUpon>DesertCase.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Animation\Game\GraphicElement\ForestCase.xaml.cs">
+      <DependentUpon>ForestCase.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Animation\Game\Map\CaseTypes.cs" />
+    <Compile Include="Animation\Game\Map\BeginMap.cs" />
+    <Compile Include="Animation\Game\Map\IMap.cs" />
     <Compile Include="Animation\Triggers\AddCommandRelay.cs" />
     <Compile Include="Animation\Triggers\TriggerTesting.xaml.cs">
       <DependentUpon>TriggerTesting.xaml</DependentUpon>
@@ -153,7 +179,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Animation\Game\GraphicElement\Ressources\Images\desert.jpg" />
+    <Resource Include="Animation\Game\GraphicElement\Ressources\Images\tree.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
