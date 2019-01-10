@@ -1,8 +1,12 @@
-﻿namespace heurtin.WpfAnimation.Animation.Game.Map
+﻿using heurtin.WpfAnimation.Animation.Game.GraphicElement;
+
+namespace heurtin.WpfAnimation.Animation.Game.Map
 {
     public interface IMap
     {
-        CaseTypes[] Rows { get; }
-        CaseTypes[] Columns { get; }
+        CaseTypes[,] Cases { get; }
+        int Height { get; }
+        int Width { get; }
+
     }
 }

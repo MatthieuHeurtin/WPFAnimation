@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\matth\Documents\Visual Studio 2017\Projects\heurtin.WpfAnimation\heurtin.WpfAnimation\App.xaml
-9-1850516216
+10-385007207
 4-269790861
-291330909350
-151522007867
-Animation\BlinkSquare\BlinkSquare.xaml;Animation\CurveDawer\CurveDrawer.xaml;Animation\FirstAnimationTest.xaml;Animation\Game\Game.xaml;Animation\Game\GraphicElement\DesertCase.xaml;Animation\Game\GraphicElement\ForestCase.xaml;Animation\Triggers\TriggerTesting.xaml;Animation\VanillePricer\VanillePricerBS.xaml;MainWindow.xaml;
+321497652262
+171936735479
+Animation\BlinkSquare\BlinkSquare.xaml;Animation\CurveDawer\CurveDrawer.xaml;Animation\FirstAnimationTest.xaml;Animation\Game\Game.xaml;Animation\Game\GraphicElement\Desert\DesertCase.xaml;Animation\Game\GraphicElement\Forest\ForestCase.xaml;Animation\Game\GraphicElement\Forest\ForestCase2.xaml;Animation\Triggers\TriggerTesting.xaml;Animation\VanillePricer\VanillePricerBS.xaml;MainWindow.xaml;
 
 False
 

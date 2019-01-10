@@ -1,4 +1,4 @@
-﻿namespace heurtin.WpfAnimation.Animation.Game.Map
+﻿namespace heurtin.WpfAnimation.Animation.Game.GraphicElement
 {
     public enum CaseTypes
     {

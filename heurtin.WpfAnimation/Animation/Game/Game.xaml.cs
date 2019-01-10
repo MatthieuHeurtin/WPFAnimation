@@ -1,5 +1,6 @@
 ﻿using heurtin.WpfAnimation.Animation.Game.GraphicElement;
 using heurtin.WpfAnimation.Animation.Game.Map;
+using heurtin.WpfAnimation.Animation.Game.Map.Maps;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,10 +15,8 @@ namespace heurtin.WpfAnimation.Animation.Game
     {
         public static string GetComment()
         {
-            return "Is it a game";
+            return "Is it a game ?";
         }
-
-        private const int SIZE = 6;
 
         public Game()
         {
@@ -25,42 +24,37 @@ namespace heurtin.WpfAnimation.Animation.Game
 
             DataContext = this;
 
-            BuildMap(new BeginMap());
-
-
-
-
-
-
-
+            BuildMap(new StartingMap());
         }
 
        private void BuildMap(IMap map)
         {
-            for (int i = 0; i < SIZE; i++)
+            for (int i = 0; i < map.Height; i++)
             {
                 RowDefinition row = new RowDefinition();
                 GameArea.RowDefinitions.Add(row);
             }
 
-            for (int i = 0; i < SIZE; i++)
+            for (int i = 0; i < map.Width; i++)
             {
                 ColumnDefinition col = new ColumnDefinition();
                 GameArea.ColumnDefinitions.Add(col);
             }
 
 
-            for (int i = 0; i < map.Columns.Length; i++)
+            for (int i = 0; i < map.Height; i++)
             {
-                for (int j = 0; j < map.Rows.Length; j++)
+                for (int j = 0; j < map.Width; j++)
                 {
-                    DesertCase f = new DesertCase();
-                    Grid.SetRow(f, i);
-                    Grid.SetColumn(f, j);
-                    GameArea.Children.Add(f);
+
+                    CaseTypes caseType = map.Cases[i, j];
+
+                    ICase caseInst = CaseFactory.GetCaseFromType(caseType);
+                    Grid.SetRow(caseInst as UserControl, i);
+                    Grid.SetColumn(caseInst as UserControl, j);
+                    GameArea.Children.Add(caseInst as UserControl);
                 }
             }
-
         }
 
     }
